@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hasnain Maqsood | Software Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1f5;--ink:#14213d;--mute:#56607a;--line:#c9d0dd;--acc:#2f4bff;--acc2:#ff8a3d;--card:#f8f9fc;--glow:rgba(47,75,255,.18);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1224;--ink:#e8ecf7;--mute:#98a3bf;--line:#28304d;--acc:#8ea0ff;--acc2:#ffa666;--card:#151c34;--glow:rgba(142,160,255,.16)}}
+:root[data-theme="dark"]{--bg:#0d1224;--ink:#e8ecf7;--mute:#98a3bf;--line:#28304d;--acc:#8ea0ff;--acc2:#ffa666;--card:#151c34;--glow:rgba(142,160,255,.16)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.125rem/1.65 "Newsreader",Georgia,serif;overflow-x:hidden}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+h1,h2,h3,.sans{font-family:"Bricolage Grotesque",system-ui,sans-serif}
+.wrap{max-width:66rem;margin:0 auto;padding:0 1.5rem;position:relative;z-index:1}
+#bar{position:fixed;top:0;left:0;height:4px;width:100%;background:linear-gradient(90deg,var(--acc),var(--acc2));transform-origin:0 50%;transform:scaleX(0);z-index:50}
+#glow{position:fixed;width:34rem;height:34rem;margin:-17rem 0 0 -17rem;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 65%);pointer-events:none;z-index:0;left:50%;top:30%}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;z-index:0;will-change:transform}
+.o1{width:22rem;height:22rem;background:var(--acc);top:-6rem;right:-6rem}
+.o2{width:16rem;height:16rem;background:var(--acc2);top:22rem;left:-8rem;opacity:.22}
+nav{display:flex;gap:1.5rem;justify-content:flex-end;padding:1.5rem 0;font:700 .95rem "Bricolage Grotesque",sans-serif}
+nav a{text-decoration:none;color:var(--mute);position:relative}
+nav a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:100%;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav a:hover,nav a.on{color:var(--ink)}nav a:hover::after,nav a.on::after{transform:scaleX(1)}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center;padding:2rem 0 5rem;position:relative}
+h1{font-weight:800;font-size:clamp(3rem,9vw,6.5rem);letter-spacing:-.045em;line-height:.95;margin:0}
+h1 .l{display:block;overflow:hidden;padding-bottom:.08em}
+h1 .l span{display:inline-block;transform:translateY(110%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .l:nth-child(2) span{animation-delay:.15s;color:var(--acc)}
+@keyframes up{to{transform:none}}
+.type{font:700 1.35rem "Bricolage Grotesque",sans-serif;margin:1.75rem 0 .5rem;min-height:2rem}
+.type::after{content:"";display:inline-block;width:3px;height:1.2em;background:var(--acc2);margin-left:4px;vertical-align:-.2em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{color:var(--mute);max-width:32rem;margin:0}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem}
+.btn{font:700 1rem "Bricolage Grotesque",sans-serif;padding:.9rem 1.5rem;border-radius:.6rem;text-decoration:none;border:2px solid var(--ink);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--acc)}
+.btn.p{background:var(--ink);color:var(--bg)}
+.photo{position:relative;aspect-ratio:4/5;perspective:900px;max-width:22rem;justify-self:center;width:100%}
+.frame{position:absolute;inset:0;border-radius:1.5rem;overflow:hidden;background:linear-gradient(145deg,var(--acc),var(--acc2));transform-style:preserve-3d;transition:transform .15s;box-shadow:0 30px 60px -20px rgba(20,33,61,.45)}
+.frame img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1}
+.frame .mono{position:absolute;inset:0;display:grid;place-items:center;font:800 6rem "Bricolage Grotesque",sans-serif;color:rgba(255,255,255,.9);letter-spacing:-.05em}
+.frame::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.28) 50%,transparent 60%);transform:translateX(-120%);animation:shine 5s 1.5s infinite}
+@keyframes shine{30%,100%{transform:translateX(120%)}}
+.photo::before{content:"";position:absolute;inset:-14px -14px 14px 14px;border:2px solid var(--acc);border-radius:1.6rem;animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translate(6px,-8px)}}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:5rem}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.5rem}
+.stat b{display:block;font:800 clamp(2rem,6vw,3.25rem)/1 "Bricolage Grotesque",sans-serif;color:var(--acc)}
+.stat span{color:var(--mute);font-size:.95rem}
+.marq{overflow:hidden;border-block:2px solid var(--ink);padding:1rem 0;margin-bottom:5rem;white-space:nowrap}
+.marq div{display:inline-flex;gap:3rem;animation:m 28s linear infinite;font:800 1.75rem "Bricolage Grotesque",sans-serif}
+.marq:hover div{animation-play-state:paused}
+.marq i{font-style:normal;color:var(--acc2)}
+@keyframes m{to{transform:translateX(-50%)}}
+section{border-top:2px solid var(--ink);padding:2.5rem 0 4.5rem;display:grid;grid-template-columns:11rem 1fr;gap:1.5rem 3rem}
+h2{font-size:1.5rem;font-weight:700;margin:0}
+.projs{display:grid;gap:1.25rem}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:1.1rem;padding:1.75rem;position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
+.proj::before{content:"";position:absolute;inset:0;background:radial-gradient(500px circle at var(--x,50%) var(--y,0%),var(--glow),transparent 45%);opacity:0;transition:opacity .3s}
+.proj:hover{transform:translateY(-5px);border-color:var(--acc)}.proj:hover::before{opacity:1}
+.proj>*{position:relative}
+h3{font-size:1.5rem;margin:0 0 .5rem}
+.proj p{margin:0 0 1rem;color:var(--mute)}
+.tags{display:flex;gap:.5rem;flex-wrap:wrap;padding:0;margin:0;list-style:none;font:700 .85rem "Bricolage Grotesque",sans-serif}
+.tags li{padding:.2rem .7rem;border:1px solid var(--line);border-radius:99px}
+.tl{position:relative;padding-left:1.75rem;border-left:2px solid var(--line)}
+.job{position:relative;padding-bottom:2rem}
+.job::before{content:"";position:absolute;left:calc(-1.75rem - 7px);top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 5px var(--glow)}
+.job b{font-family:"Bricolage Grotesque",sans-serif}.when{color:var(--mute);font-size:.95rem}.job p{margin:.25rem 0 0}
+.sk{display:grid;gap:1.1rem}
+.sk div{display:grid;gap:.35rem}
+.sk span{font:700 1rem "Bricolage Grotesque",sans-serif;display:flex;justify-content:space-between}
+.sk em{height:8px;border-radius:9px;background:var(--line);overflow:hidden;display:block}
+.sk em i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--acc),var(--acc2));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.big{font:800 clamp(1.6rem,5vw,3rem)/1.1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;word-break:break-word;text-decoration:none;background:linear-gradient(var(--acc),var(--acc)) 0 100%/0 3px no-repeat;transition:background-size .4s}
+.big:hover{background-size:100% 3px}
+footer{border-top:2px solid var(--ink);padding:1.5rem 0 3rem;color:var(--mute);font-size:.95rem}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (max-width:48rem){.hero{grid-template-columns:1fr}.photo{order:-1;max-width:15rem}section{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}h1 .l span{transform:none}.rv{opacity:1;transform:none}.sk em i{width:var(--w)!important}}
+</style>
+</head>
+<body>
+<div id="bar"></div><div id="glow"></div>
+<div class="wrap">
+<div class="orb o1" data-p=".15"></div><div class="orb o2" data-p="-.1"></div>
+<nav aria-label="Sections"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+
+<header class="hero">
+<div>
+<h1><span class="l"><span>Hasnain</span></span><span class="l"><span>Maqsood</span></span></h1>
+<p class="type" id="type" aria-live="off"></p>
+<p class="lead">I build reliable, well-tested software and care about how it feels to use.</p>
+<div class="btns"><a class="btn p" href="https://github.com/harrykhan-crypto">See my GitHub</a><a class="btn" href="#contact">Get in touch</a></div>
+</div>
+<div class="photo" id="photo"><div class="frame" id="frame">
+<div class="mono" aria-hidden="true">HM</div>
+<!-- PHOTO: replace src with your photo -->
+<img id="me" alt="Portrait of Hasnain Maqsood" src="C:\Users\Hasnain\Desktop\unnamed.jpg" hidden>
+</div></div>
+</header>
+
+<div class="stats rv">
+<div class="stat"><b data-n="3" data-s="+">0</b><span>Years building software</span></div>
+<div class="stat"><b data-n="15" data-s="+">0</b><span>Projects shipped</span></div>
+<div class="stat"><b data-n="100" data-s="%">0</b><span>Commitment to clean code</span></div>
+</div>
+</div>
+
+<div class="marq" aria-hidden="true"><div>
+<span>JavaScript</span><i>&#10022;</i><span>TypeScript</span><i>&#10022;</i><span>Python</span><i>&#10022;</i><span>React</span><i>&#10022;</i><span>Node.js</span><i>&#10022;</i><span>SQL</span><i>&#10022;</i><span>Docker</span><i>&#10022;</i><span>Git</span><i>&#10022;</i>
+<span>JavaScript</span><i>&#10022;</i><span>TypeScript</span><i>&#10022;</i><span>Python</span><i>&#10022;</i><span>React</span><i>&#10022;</i><span>Node.js</span><i>&#10022;</i><span>SQL</span><i>&#10022;</i><span>Docker</span><i>&#10022;</i><span>Git</span><i>&#10022;</i>
+</div></div>
+
+<main class="wrap">
+<section id="work"><h2 class="rv">Selected work</h2>
+<div class="projs">
+<article class="proj rv"><h3>FIRST CALL COMPANY PAKISTAN X DUBAI</h3><p>An bussiness company. It sells and buys products.</p><ul class="tags"><li>JavaScript</li><li>Node.js</li><li>PostgreSQL</li></ul></article>
+<article class="proj rv"><h3>IN PROGRESS</h3><p>The problem you solved and your part in it. Numbers help: users, speed gains, time saved.</p><ul class="tags"><li>Python</li><li>REST API</li><li>Docker</li></ul></article>
+<article class="proj rv"><h3>IN PROGRESS</h3><p>Link the repository or live demo and say what you learned building it.</p><ul class="tags"><li>React</li><li>TypeScript</li></ul></article>
+</div></section>
+
+<section id="experience"><h2 class="rv">Experience</h2>
+<div class="tl rv">
+<div class="job"><b>Software Engineer, STUDENT</b><div class="when">2024 to present</div><p>What you own and what changed because of your work.</p></div>
+<div class="job"><b>Previous Role : LEARNER</b><div class="when">2022 to 2024</div><p>Key responsibility or achievement.</p></div>
+<div class="job"><b>BS SOFTWARE ENGINEERING, ABASYN UNIVERSITY PESHAWAR</b><div class="when">2024-2028</div></div>
+</div></section>
+
+<section id="skills"><h2 class="rv">Skills</h2>
+<div class="sk rv">
+<div><span>JavaScript / TypeScript<small>90%</small></span><em><i data-w="90%" style="--w:90%"></i></em></div>
+<div><span>Python<small>80%</small></span><em><i data-w="80%" style="--w:80%"></i></em></div>
+<div><span>React and Node.js<small>85%</small></span><em><i data-w="85%" style="--w:85%"></i></em></div>
+<div><span>Databases and SQL<small>75%</small></span><em><i data-w="75%" style="--w:75%"></i></em></div>
+</div></section>
+
+<section id="contact"><h2 class="rv">Contact</h2>
+<div class="rv"><p>Open to new roles and interesting projects.</p>
+<a class="big" href="https://github.com/harrykhan-crypto">github.com/harrykhan-crypto</a>
+<p><a href="mailto:your@email.com">khanhussnain532@gmail.com</a></p></div></section>
+<footer>&copy; 2026 Hasnain Maqsood</footer>
+</main>
+
+<script>
+(function(){
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches,$=function(s){return document.querySelector(s)};
+var img=$('#me');if(img.getAttribute('src')){img.hidden=false}
+/* typing roles */
+var roles=['Software Engineer','Full-Stack Developer','Problem Solver','Open-Source Contributor'],t=$('#type'),ri=0,ci=0,del=false;
+function tick(){var w=roles[ri];t.textContent=w.slice(0,ci);
+if(rm){t.textContent=roles[0];return}
+if(!del&&ci===w.length){del=true;return setTimeout(tick,1600)}
+if(del&&ci===0){del=false;ri=(ri+1)%roles.length}
+ci+=del?-1:1;setTimeout(tick,del?40:80)}tick();
+/* scroll progress, parallax, active nav */
+var bar=$('#bar'),orbs=document.querySelectorAll('.orb'),links=document.querySelectorAll('nav a');
+function sc(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight||1);bar.style.transform='scaleX('+p+')';
+if(!rm)orbs.forEach(function(o){o.style.transform='translateY('+(h.scrollTop*o.dataset.p)+'px)'});
+links.forEach(function(a){var s=$(a.getAttribute('href'));if(s){var r=s.getBoundingClientRect();a.classList.toggle('on',r.top<innerHeight*.4&&r.bottom>innerHeight*.4)}})}
+addEventListener('scroll',sc,{passive:true});sc();
+/* cursor glow */
+var g=$('#glow');if(!rm)addEventListener('pointermove',function(e){g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+/* photo tilt */
+var ph=$('#photo'),fr=$('#frame');
+if(!rm){ph.addEventListener('pointermove',function(e){var b=ph.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;fr.style.transform='rotateY('+x*16+'deg) rotateX('+-y*16+'deg)'});
+ph.addEventListener('pointerleave',function(){fr.style.transform=''})}
+/* card spotlight */
+document.querySelectorAll('.proj').forEach(function(c){c.addEventListener('pointermove',function(e){var b=c.getBoundingClientRect();c.style.setProperty('--x',e.clientX-b.left+'px');c.style.setProperty('--y',e.clientY-b.top+'px')})});
+/* reveal, counters, skill bars */
+function count(el){var n=+el.dataset.n,s=el.dataset.s||'',st=performance.now();
+(function f(now){var p=Math.min((now-st)/1400,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f)})(st)}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;el.classList.add('in');
+el.querySelectorAll('[data-n]').forEach(count);el.querySelectorAll('[data-w]').forEach(function(i){i.style.width=i.dataset.w});io.unobserve(el)})},{threshold:.2});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
